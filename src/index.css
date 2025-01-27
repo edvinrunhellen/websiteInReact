@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+:root {
+  --primary: #EEA47FFF;
+  --secondary: #00539CFF;
+  --dark: #1d1d1d;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: "Poppins";
+  background: var(--secondary);
+}
+
+* {
+  color: #fff;
+  margin: 0;
+}
+
+p {
+  margin: 20px 0;
+}
+
+button {
+  border: 0;
+  padding: 8px;
+  border-radius: 4px;
+  color: var(--dark);
+  ;
+  background: var(--primary);
+  cursor: pointer;
+}
+
+/* navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0px auto
+}
+
+.nav-links {
+  display: flex;
+  gap: 16px;
+  justify-content: end;
+  max-width: 1200px;
+}
+
+.nav-link {
+  text-decoration: none;
+  padding: 6px;
+  border-radius: 4px;
+}
+
+.nav-link.active {
+  background: var(--primary);
+  color: var(--dark);
+
+}
+
+.logo {
+  width: 100px;
+  object-fit: contain;
+}
+
+header {
+  max-width: 1200px;
+  margin: 40px 40px;
+}
+
+main {
+max-width: 1200px;
+margin: 40px auto;
+}
+
+.help-layout__nav {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 30px auto;
+}
+
+.help-layout__nav__link {
+  padding: 10px;
+  border: 2px solid white;
+  border-radius: 4px;
+  text-decoration: none;
+}
+.help-layout__nav__link:hover {
+  background-color: var(--primary);
+}
+
+.help-layout__nav__link.active {
+  background-color: var(--primary);
+}
+
+.faq__question {
+  background-color: rgba(red, green, blue, alpha);
+  padding: 5px 20px;
+  border-radius: 4px;
+  margin: 40px 0;
+}
+
+.profiles__links {
+  display: block;
+  background-color: rgba(0,0,0, 0.2);
+  padding: 20px;
+  border-radius: 4px;
+  margin: 20px 0px;
+  text-decoration: none;
+}
+
+.profiles__links:hover {
+color: var(--primary)
+}
+
+.profiles p {
+  margin: 0px
+}
+
+.profiles__station {
+  font-size: 0.8em;
+  color: #bbb
+}
+
+.profile-details {
+  background-color: rgba(0.0.0, 0.8);
+  padding: 20px;
+  border-radius: 4px;
+  margin: 20px 0;
+}
+/* end .navbar */
