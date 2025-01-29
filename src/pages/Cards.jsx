@@ -1,4 +1,7 @@
 export default function Cards() {
+
+
+    
     return (
         <div className="Cards">
             <h2>Pokemon Cards</h2>
