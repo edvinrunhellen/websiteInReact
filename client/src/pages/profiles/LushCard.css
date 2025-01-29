@@ -1,0 +1,34 @@
+.lush-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+
+    border-radius: 12px;
+    box-shadow: 10px;
+    text-align: center;
+
+    background: rgba(0, 0, 0, 0.088);
+}
+
+.color-box {
+    width: 100%;
+
+    border-radius: 12px 12px 0 0;
+}
+
+.pokemon-image {
+    padding-top: 50px;
+    width: 50%;
+    height: auto;
+
+}
+
+.card-text {
+    padding: 10px;
+    color: black;
+
+}
