@@ -3,10 +3,10 @@ import {
     createBrowserRouter,
     createRoutesFromElements,
     Route,
-    RouterProvider, createContext
+    RouterProvider,
 } from 'react-router-dom'
 
-const CartContext = createContext();
+
 
 // pages
 import Cards from './pages/Cards'
@@ -22,6 +22,8 @@ import ProfilesError from  './pages/profiles/ProfilesError'
 import RootLayout from './layouts/RootLayout'
 import HelpLayout from './layouts/HelpLayout'
 import ProfilesLayout from './layouts/ProfilesLayout'
+
+
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -41,6 +43,7 @@ const router = createBrowserRouter(
                 />
             </Route>
             <Route path="*" element={<NotFound />} />
+
         </Route>
     )
 )
