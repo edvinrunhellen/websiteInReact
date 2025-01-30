@@ -1,7 +1,17 @@
-export default function Checkout() {
+import { use, useState } from 'react'
+import { CartContext } from '../App'
+
+function Checkout() {
+  const { cart } = use(CartContext)
+  console.log(cart)
     return (
-        <div className="Checkout">
-          <h1>Checkout</h1>
+        <div>
+            {cart.map((item) => (
+                <li key={item}>{item.name}</li>
+            ))}
         </div>
     )
+  
 }
+
+export default Checkout

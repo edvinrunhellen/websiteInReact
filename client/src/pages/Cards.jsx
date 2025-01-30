@@ -1,9 +1,11 @@
 import './profiles/LushCard.css'
-import { StrictMode, useState, createContext, use } from "react";
+import { StrictMode, useContext, useState, createContext, use } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route, NavLink } from "react-router";
+import { CartContext } from '../App';
 
 const PokemonCards = () => {
+    const { cart, setCart } = useContext(CartContext)
     const pokemonCards = [
         {
             background: '#F5EDCE',
@@ -111,7 +113,7 @@ const PokemonCards = () => {
                     <p><strong>Attack:</strong> {card.attack}</p>
                     <p><strong>Price:</strong> {card.price}</p>
                 </div>
-                <button>Add to Cart</button>
+                <button onClick={addToCart}>Add to Cart</button>
             </div>
         );
     });
@@ -121,7 +123,17 @@ const PokemonCards = () => {
             {Cards}
         </div>
     );
+
+    function addToCart() {
+        setCart(current => [...current, pokemonCards])
+
+    }
+    
+
+    
+
 };
+
 
 
 
