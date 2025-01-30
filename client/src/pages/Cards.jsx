@@ -1,11 +1,12 @@
 import './profiles/LushCard.css'
-import { StrictMode, useContext, useState, createContext, use } from "react";
+import { StrictMode, useContext, useState, createContext, use, useEffect } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route, NavLink } from "react-router";
 import { CartContext } from '../App';
 
 const PokemonCards = () => {
     const { cart, setCart } = useContext(CartContext)
+    const [products, setProducts] = useState([]);
     const pokemonCards = [
         {
             background: '#F5EDCE',
@@ -101,22 +102,38 @@ const PokemonCards = () => {
     ];
 
 
-    const Cards = pokemonCards.map((card, i) => {
-        return (
-            <div key={i} className="card">
-                <div className="color-box" style={{}}></div>
-                <img src={card.image} alt={card.name} className="pokemon-image" />
-                <div className="card-text">
-                    <h2>{card.name}</h2>
-                    <p><strong>Type:</strong> {card.type}</p>
-                    <p><strong>HP:</strong> {card.hp}</p>
-                    <p><strong>Attack:</strong> {card.attack}</p>
-                    <p><strong>Price:</strong> {card.price}</p>
-                </div>
-                <button onClick={addToCart}>Add to Cart</button>
+const Cards = pokemonCards.map((card, i) => {
+    return (
+        <div key={i} className="card">
+            <div className="color-box" style={{}}></div>
+            <img src={card.image} alt={card.name} className="pokemon-image" />
+            <div className="card-text">
+                <h2>{card.name}</h2>
+                <p>Type: {card.type}</p>
+                <p>HP: {card.hp}</p>
+                <p>Attack: {card.attack}</p>
+                <p>Price: {card.price}</p>
             </div>
-        );
-    });
+            <button onClick={() => addToCart(card)}>Add to Cart</button>
+            {console.log(card)}
+        </div>
+    );
+    function addToCart() {
+        setCart(current => [...current, card])
+    }
+
+    
+
+});
+    
+     useEffect(()=>{
+
+        fetch("/api/products")
+        .then(response=>response.json())
+        .then(data=>{setProducts(data)});
+     });
+    
+    
 
     return (
         <div className="lush-container">
@@ -124,10 +141,7 @@ const PokemonCards = () => {
         </div>
     );
 
-    function addToCart() {
-        setCart(current => [...current, pokemonCards])
-
-    }
+    
     
 
     
