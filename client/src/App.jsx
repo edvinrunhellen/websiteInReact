@@ -3,8 +3,10 @@ import {
     createBrowserRouter,
     createRoutesFromElements,
     Route,
-    RouterProvider,
+    RouterProvider, createContext
 } from 'react-router-dom'
+
+const CartContext = createContext();
 
 // pages
 import Cards from './pages/Cards'

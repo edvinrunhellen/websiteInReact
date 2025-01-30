@@ -1,5 +1,7 @@
 import './profiles/LushCard.css'
-
+import { StrictMode, useState, createContext, use } from "react";
+import { createRoot } from "react-dom/client";
+import { BrowserRouter, Routes, Route, NavLink } from "react-router";
 
 const PokemonCards = () => {
     const pokemonCards = [
@@ -120,4 +122,7 @@ const PokemonCards = () => {
         </div>
     );
 };
+
+
+
 export default PokemonCards
