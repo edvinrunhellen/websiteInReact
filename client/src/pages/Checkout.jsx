@@ -1,10 +1,30 @@
 
-import { use, useState } from 'react'
+import { use, useState, useContext } from 'react'
 import { CartContext } from '../App'
 
 function Checkout() {
-  const { cart } = use(CartContext)
-  console.log(cart)
+  const { cart } = useContext(CartContext)
+
+
+  const completeOrder = () => {
+    // Skicka
+    fetch('/api/orders', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(cart),
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log("Order posted successfully:", data);
+        //rensa han
+        setCart([]);
+      })
+      .catch(error => {
+        console.error('Error posting order:', error);
+      });
+  };
   return (
       <div>
     <div>
@@ -24,7 +44,7 @@ function Checkout() {
         ))
       )}
       </div>
-      <button>Complete order</button>
+      <button onClick={completeOrder}>Complete order</button>
       </div>
 );
 }
