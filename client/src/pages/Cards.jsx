@@ -106,8 +106,8 @@ const Cards = pokemonCards.map((card, i) => {
     return (
         <div key={i} className="card">
             <div className="color-box" style={{}}></div>
-            <img src={card.image} alt={card.name} className="pokemon-image" />
-            <div className="card-text">
+            <img src={card.image} alt={card.name} className="pokemonImage" />
+            <div className="cardText">
                 <h2>{card.name}</h2>
                 <p>Type: {card.type}</p>
                 <p>HP: {card.hp}</p>
@@ -128,16 +128,17 @@ const Cards = pokemonCards.map((card, i) => {
     
      useEffect(()=>{
 
-        fetch("/api/products")
+        fetch("http://localhost:5000/api/products")
         .then(response=>response.json())
         .then(data=>{setProducts(data)});
      });
     
-    
-
     return (
         <div className="lush-container">
             {Cards}
+            <ul>
+
+            </ul>
         </div>
     );
 
