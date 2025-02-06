@@ -57,7 +57,7 @@ const pokemonCards = () => {
             {cart.map((item, index) => (
                     <li key={index}>{item.name} {item.price}</li>
                 ))}
-            <h1>Pokemon Cards</h1>
+            <h1>Cards for purchase</h1>
             <div className="cards-container">
                 {Cards}
             </div>
