@@ -19,7 +19,7 @@ const pokemonCards = () => {
                     setPokemonCards(data); 
                 }
             } catch (error) {
-                console.error('Error fetching products:', error);
+                console.error('Error fetching products', error);
             }
         };
 

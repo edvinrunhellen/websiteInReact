@@ -33,6 +33,7 @@ function createAppRouter() {
             <Route path="/" element={<RootLayout />}>
                 <Route index element={<Cards />} />
                 <Route path="checkout" element={<Checkout />} />
+                <Route path="sell" element={<Sell />} />
                 <Route path="help" element={<HelpLayout />}>
                     <Route path="faq" element={<Faq />} />
                     <Route path="contact" element={<Contact />} />
